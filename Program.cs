@@ -139,7 +139,7 @@ namespace Assignment02
                         }
                         triangle.SetSide3(input);
 
-                        Console.WriteLine(" {0} \n ", triangle.TriangleCategory);
+                        Console.WriteLine(" {0} \n ", triangle.Analyze);
                         break;
 
                     case 2:

@@ -32,8 +32,10 @@ namespace Assignment02
         }
 
         //to analyze category of traingle
-        public int TriangleCategory
+        // return error
+        public int Analyze
         {
+
             get
             {
                 if (Side1 == Side2 && Side2 == Side3)
