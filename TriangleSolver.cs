@@ -14,6 +14,7 @@ namespace Assignment02
         int Isos;
         int Scal;
         int yes;
+        int no;
 
         // Constructor1; default values are 1
         public TriangleSolver()
@@ -35,32 +36,41 @@ namespace Assignment02
         // return error
         public int Analyze
         {
-
             get
             {
-                if (Side1 == Side2 && Side2 == Side3)
+                if (Side1 < (Side2 + Side3) || Side2 < (Side1 + Side3) || Side3 < (Side1 + Side2))
                 {
-                    Console.Write("\n");
-                    Console.Write("Values entered by user forms a triangle. \n",yes);
-                    Console.Write("This is an Equilateral Triangle.\n", Equi);
-                    return Equi;
-                    
-                }
-                else if (Side1 == Side2 || Side1 == Side3 || Side2 == Side3)
-                {
-                    Console.Write("\n");
-                    Console.Write("Values entered by user forms a triangle. \n");
-                    Console.Write("This is an Isosceles Triangle.\n",Isos);
-                    return Isos;
+
+                    if (Side1 == Side2 && Side2 == Side3)
+                    {
+                        
+                        Console.Write("\nValues entered by user forms a triangle. \n", yes);
+                        Console.Write("This is an Equilateral Triangle.\n", Equi);
+                        return Equi;
+
+                    }
+                    else if (Side1 == Side2 || Side1 == Side3 || Side2 == Side3)
+                    {
+                        
+                        Console.Write("\nValues entered by user forms a triangle. \n");
+                        Console.Write("This is an Isosceles Triangle.\n", Isos);
+                        return Isos;
+                    }
+                    else
+                    {
+                        
+                        Console.Write("\nValues entered by user forms a triangle. \n");
+                        Console.Write("This is a Scalene Triangle.\n", Scal);
+                        return Scal;
+                    }
                 }
                 else
                 {
-                    Console.Write("\n");
-                    Console.Write("Values entered by user forms a triangle. \n");
-                    Console.Write("This is a Scalene Triangle.\n",Scal);
-                    return Scal;
-
+                    
+                    Console.Write("\nInputted values do not form a triangle.\n", no);
+                    return no;
                 }
+                
             }
         }
 
